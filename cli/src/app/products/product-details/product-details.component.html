@@ -1,1 +1,7 @@
 <h3>{{ product.name }}</h3>
+<img
+  [src]="'http://localhost:1337' + product.picture[0].url"
+  [alt]="product.name + ' picture'"
+  width="300px"
+/>
+<div>{{ product.description }}</div>
