@@ -1,6 +1,7 @@
 <mat-card class="example-card">
   <mat-card-header>
-    <mat-card-title>{{ product.name }}</mat-card-title>
+    <mat-card-title>{{ product.name }}}</mat-card-title>
+    <mat-card-subtitle>{{ product.category.name }}</mat-card-subtitle>
   </mat-card-header>
   <img
     mat-card-image
@@ -12,6 +13,7 @@
     <p>
       {{ product.description }}
     </p>
+    <mat-card-title class="card_price">${{ product.price }}</mat-card-title>
   </mat-card-content>
   <mat-card-actions>
     <a mat-stroked-button href="https://www.google.com/" target="_blank"

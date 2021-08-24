@@ -7,18 +7,26 @@ import { DbService } from '../../services/db.service';
 })
 export class ProductsListComponent implements OnInit, OnDestroy {
   products: any;
+  categories: any;
   productsSub: any;
+  categoriesSub: any;
 
   constructor(private db: DbService) {}
 
   ngOnInit(): void {
     this.productsSub = this.db.getProducts().subscribe((datas) => {
-      console.log(datas);
+      // console.log(datas);
       this.products = datas;
+    });
+
+    this.categoriesSub = this.db.getCategories().subscribe((datas) => {
+      // console.log(datas);
+      this.categories = datas;
     });
   }
 
   ngOnDestroy(): void {
     this.productsSub.unsubscribe();
+    this.categoriesSub.unsubscribe();
   }
 }

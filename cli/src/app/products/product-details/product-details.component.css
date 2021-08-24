@@ -5,3 +5,12 @@
   flex-direction: column;
   justify-content: space-evenly;
 }
+.mat-card-content p {
+  width: 350px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card_price {
+  color: green;
+}

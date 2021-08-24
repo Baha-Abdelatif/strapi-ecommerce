@@ -7,6 +7,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [ProductsListComponent, ProductDetailsComponent],
@@ -15,6 +16,7 @@ import { MatButtonModule } from '@angular/material/button';
     ProductsRoutingModule,
     MatCardModule,
     MatButtonModule,
+    MatSelectModule,
   ],
 })
 export class ProductsModule {}
