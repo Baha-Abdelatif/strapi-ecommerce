@@ -1,1 +1,8 @@
-<p>products-list works!</p>
+<h1>All products</h1>
+
+<div class="products_list">
+  <app-product-details
+    *ngFor="let product of products"
+    [product]="product"
+  ></app-product-details>
+</div>
