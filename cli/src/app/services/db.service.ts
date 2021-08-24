@@ -12,7 +12,7 @@ export class DbService {
   getCategories() {
     return this.http.get<any>('http://localhost:1337/categories').pipe(
       tap((data) => {
-        console.log(data);
+        // console.log(data);
       }),
       map((datas) => {
         const categories = datas.map((category: any) => {

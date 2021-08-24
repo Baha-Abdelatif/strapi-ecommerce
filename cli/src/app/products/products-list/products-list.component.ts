@@ -6,6 +6,7 @@ import { DbService } from '../../services/db.service';
   styleUrls: ['./products-list.component.css'],
 })
 export class ProductsListComponent implements OnInit, OnDestroy {
+  allProducts: any;
   products: any;
   categories: any;
   productsSub: any;
@@ -17,12 +18,24 @@ export class ProductsListComponent implements OnInit, OnDestroy {
     this.productsSub = this.db.getProducts().subscribe((datas) => {
       // console.log(datas);
       this.products = datas;
+      this.allProducts = datas;
     });
 
     this.categoriesSub = this.db.getCategories().subscribe((datas) => {
       // console.log(datas);
-      this.categories = datas;
+      this.categories = [{ id: 0, name: 'all products' }, ...datas];
     });
+  }
+
+  filterProducts(e: any): any {
+    // console.log(e);
+    if (e.value === 0) {
+      this.products = this.allProducts;
+      return;
+    }
+    this.products = this.allProducts.filter(
+      (p: any) => p.category.id === e.value
+    );
   }
 
   ngOnDestroy(): void {
