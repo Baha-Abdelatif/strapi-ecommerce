@@ -5,15 +5,16 @@ import { ProductsRoutingModule } from './products-routing.module';
 import { ProductsListComponent } from './products-list/products-list.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
-  declarations: [
-    ProductsListComponent,
-    ProductDetailsComponent
-  ],
+  declarations: [ProductsListComponent, ProductDetailsComponent],
   imports: [
     CommonModule,
-    ProductsRoutingModule
-  ]
+    ProductsRoutingModule,
+    MatCardModule,
+    MatButtonModule,
+  ],
 })
-export class ProductsModule { }
+export class ProductsModule {}
